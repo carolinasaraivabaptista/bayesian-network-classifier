@@ -1,8 +1,16 @@
 # Bayesian Network Classifier (Java)
 
+![Java](https://img.shields.io/badge/Java-11%2B-ED8B00?logo=openjdk&logoColor=white)
+![GUI](https://img.shields.io/badge/GUI-Swing-5382A1)
+![Topic](https://img.shields.io/badge/topic-probabilistic%20graphical%20models-8A2BE2)
+![Validation](https://img.shields.io/badge/validation-leave--one--out-0A9EDC)
+
 A Bayesian network classifier written from scratch in Java. It learns the network structure from data with a **greedy hill climber** scored by **Minimum Description Length (MDL)**, estimates the probability tables with Laplace smoothing, and classifies new examples. Two Swing desktop apps let you train a model and then use it to classify.
 
 Built as the group project for *Algorithms and Computational Modelling* (Instituto Superior Técnico, 2025/2026).
+
+<p align="center"><img src="figures/learned_network.png" width="560" alt="Bayesian network learned on the Diabetes dataset"></p>
+<p align="center"><sub>Structure learned on the Diabetes data. The class is a parent of every attribute; the blue edges are the extra dependencies the hill climber kept. Attributes are numbered by column, since the CSVs have no headers.</sub></p>
 
 ## Highlights
 
@@ -26,6 +34,8 @@ Leave-one-out accuracy with at most 2 parents and smoothing S = 0.5:
 | Breast cancer | 683 | 82.72% |
 | Diabetes | 768 | 78.39% |
 
+![Leave-one-out accuracy per dataset](figures/accuracy.png)
+
 ## How it works
 
 Every attribute has the class as a parent, and the hill climber adds up to *k* extra parents between attributes. The search starts from the empty graph and from several random graphs, keeps adding or removing any edge that lowers the MDL score, and stops at a local optimum. The best graph across all restarts becomes the final model.
@@ -47,6 +57,7 @@ src/projecto/
 ├── LearningApp.java     # GUI to train and save a network
 └── ClassifyingApp.java  # GUI to load a network and classify
 data/                    # discretised datasets (last column is the class)
+figures/                 # README figures and the script that draws them
 ```
 
 (`Amostra` is Portuguese for *sample*.)
