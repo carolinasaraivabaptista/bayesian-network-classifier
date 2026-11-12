@@ -1,10 +1,5 @@
 # Bayesian Network Classifier (Java)
 
-![Java](https://img.shields.io/badge/Java-11%2B-ED8B00?logo=openjdk&logoColor=white)
-![GUI](https://img.shields.io/badge/GUI-Swing-5382A1)
-![Topic](https://img.shields.io/badge/topic-probabilistic%20graphical%20models-8A2BE2)
-![Validation](https://img.shields.io/badge/validation-leave--one--out-0A9EDC)
-
 A Bayesian network classifier written from scratch in Java. It learns the network structure from data with a **greedy hill climber** scored by **Minimum Description Length (MDL)**, estimates the probability tables with Laplace smoothing, and classifies new examples. Two Swing desktop apps let you train a model and then use it to classify.
 
 Built as the group project for *Algorithms and Computational Modelling* (Instituto Superior Técnico, 2025/2026).
